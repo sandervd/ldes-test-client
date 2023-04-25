@@ -5,8 +5,11 @@
 
 import scrapy
 
-
-class CrawldfItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+class RDFPage(scrapy.Item):
     pass
+
+class CrawledRDFPage(RDFPage):
+    graph = scrapy.Field()
+    url = scrapy.Field()
+    headers = scrapy.Field()
+    

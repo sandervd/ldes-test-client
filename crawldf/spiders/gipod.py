@@ -1,10 +1,8 @@
 import scrapy
 
+from crawldf.spiders.tree import TreeSpider
 
-class GipodSpider(scrapy.Spider):
+class GipodSpider(TreeSpider):
     name = "gipod"
     allowed_domains = ["private-api.gipod.beta-vlaanderen.be"]
-    start_urls = ["http://private-api.gipod.beta-vlaanderen.be/"]
-
-    def parse(self, response):
-        pass
+    start_urls = ["https://private-api.gipod.beta-vlaanderen.be/api/v1/ldes/mobility-hindrances"]
