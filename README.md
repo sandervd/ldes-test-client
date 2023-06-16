@@ -59,3 +59,23 @@ After object embedding this becomes:
 
 ## Freeze dependencies
 - pipreqs
+
+# How to run  
+- Set following required parameters in the `class TreeSpider` of [tree.py](./crawldf/spiders/tree.py). Please refer to the example [gipod.py](./crawldf/spiders/gipod.py).
+  - name  
+    - e.g. name = "gipod"  
+  - allowed_domains  
+    - e.g. allowed_domains = ["private-api.gipod.beta-vlaanderen.be"]  
+  - start_urls  
+    - e.g. start_urls = ["https://private-api.gipod.beta-vlaanderen.be/api/v1/ldes/mobility-hindrances"]  
+- Under the directory `./crawldf/`, run `scrapy crawl [name]`, e.g.`scrapy crawl gipod`.  
+or create a [main.py](./crawldf/main.py) under the directory `./crawldf/` with follow content, please modify accordingly:
+
+```
+    from scrapy.cmdline import execute  
+    execute(["scrapy","crawl","gipod"])
+```
+  
+# Output  
+- `items.rdf` file is generated under the directory `./crawldf/`
+  
