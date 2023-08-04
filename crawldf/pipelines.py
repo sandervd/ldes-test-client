@@ -63,7 +63,7 @@ class RDFGraphToPageObjectPipeline:
 # Write the RDF 'page objects' to disk
 class RDFWriterPipeline:
     def open_spider(self, spider):
-        self.file = open('items.rdf', 'w')
+        self.file = open('items.rdf', 'w', encoding='utf-8')
 
     def close_spider(self, spider):
         self.file.close()
